@@ -1,0 +1,1442 @@
+/*
+	Theme Name: Sixteen Nine Pro Theme
+	Theme URI: http://my.studiopress.com/themes/sixteen-nine/
+	Description: A mobile responsive and HTML5 theme built for the Genesis Framework.
+	Author: StudioPress
+	Author URI: http://www.studiopress.com/
+
+	Version: 1.0
+
+	Tags: black, white, one-column, two-columns, fixed-width, custom-menu, full-width-template, sticky-post, theme-options, threaded-comments, translation-ready
+
+	Template: genesis
+	Template Version: 2.0
+
+	License: GPL-2.0+
+	License URI: http://www.opensource.org/licenses/gpl-license.php 
+*/
+
+ 
+/* Table of Contents
+
+	- HTML5 Reset
+		- Baseline Normalize
+		- Box Sizing
+		- Float Clearing
+	- Defaults
+		- Typographical Elements
+		- Headings
+		- Objects
+		- Forms
+		- Tables
+	- Structure and Layout
+		- Site Containers
+		- Column Widths and Positions
+		- Column Classes
+	- Common Classes
+		- WordPress
+		- Genesis
+		- Headings
+	- Widgets
+		- Featured Content
+	- Plugins
+		- Genesis eNews Extended
+		- Genesis Latest Tweets
+		- Jetpack
+		- Gravity Forms
+	- Site Header
+		- Title Area
+		- Widget Area
+	- Site Navigation
+		- Header Navigation
+		- Primary Navigation
+		- Secondary Navigation
+	- Content Area
+		- Entries
+		- After Entry
+		- Pagination
+		- Comments
+	- Sidebar
+	- Site Footer
+	- Media Queries
+		- max-width: 1139px
+		- max-width: 1023px
+		- max-width: 767px
+
+*/
+
+
+/*
+HTML5 Reset
+---------------------------------------------------------------------------------------------------- */
+
+/* Baseline Normalize
+	normalize.css v2.1.2 | MIT License | git.io/normalize
+--------------------------------------------- */
+
+article,aside,details,figcaption,figure,footer,header,hgroup,main,nav,section,summary{display:block}audio,canvas,video{display:inline-block}audio:not([controls]){display:none;height:0}[hidden]{display:none}html{font-family:sans-serif;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}body{margin:0}a:focus{outline:thin dotted}a:active,a:hover{outline:0}h1{font-size:2em;margin:.67em 0}abbr[title]{border-bottom:1px dotted}b,strong{font-weight:bold}dfn{font-style:italic}hr{-moz-box-sizing:content-box;box-sizing:content-box;height:0}mark{background:#ff0;color:#000}code,kbd,pre,samp{font-family:monospace,serif;font-size:1em}pre{white-space:pre-wrap}q{quotes:"\201C" "\201D" "\2018" "\2019"}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sup{top:-0.5em}sub{bottom:-0.25em}img{border:0}svg:not(:root){overflow:hidden}figure{margin:0}fieldset{border:1px solid silver;margin:0 2px;padding:.35em .625em .75em}legend{border:0;padding:0}button,input,select,textarea{font-family:inherit;font-size:100%;margin:0}button,input{line-height:normal}button,select{text-transform:none}button,html input[type="button"],input[type="reset"],input[type="submit"]{-webkit-appearance:button;cursor:pointer}button[disabled],html input[disabled]{cursor:default}input[type="checkbox"],input[type="radio"]{box-sizing:border-box;padding:0}input[type="search"]{-webkit-appearance:textfield;-moz-box-sizing:content-box;-webkit-box-sizing:content-box;box-sizing:content-box}input[type="search"]::-webkit-search-cancel-button,input[type="search"]::-webkit-search-decoration{-webkit-appearance:none}button::-moz-focus-inner,input::-moz-focus-inner{border:0;padding:0}textarea{overflow:auto;vertical-align:top}table{border-collapse:collapse;border-spacing:0}
+
+/* Box Sizing
+--------------------------------------------- */
+
+*,
+input[type="search"] {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing:    border-box;
+	box-sizing:         border-box;
+}
+
+/* Float Clearing
+--------------------------------------------- */
+
+.archive-pagination:before,
+.author-box:before,
+.clearfix:before,
+.entry:before,
+.entry-comments:before,
+.entry-pagination:before,
+.footer-widgets:before,
+.nav-primary:before,
+.nav-secondary:before,
+.site-container:before,
+.site-footer:before,
+.site-header:before,
+.site-inner:before,
+.wrap:before {
+	content: " ";
+	display: table;
+}
+
+.archive-pagination:after,
+.author-box:after,
+.clearfix:after,
+.entry:after,
+.entry-comments:after,
+.entry-pagination:after,
+.footer-widgets:after,
+.nav-primary:after,
+.nav-secondary:after,
+.site-container:after,
+.site-footer:after,
+.site-header:after,
+.site-inner:after,
+.wrap:after {
+	clear: both;
+	content: " ";
+	display: table;
+}
+
+/*
+Defaults
+---------------------------------------------------------------------------------------------------- */
+
+/* Typographical Elements
+--------------------------------------------- */
+
+html {
+	font-size: 62.5%; /* 10px browser default */
+}
+
+body {
+	background-color: #000;
+	color: #000;
+	font-family: 'Roboto', sans-serif;
+	font-size: 16px;
+	font-size: 1.6rem;
+	font-weight: 300;
+	line-height: 1.625;
+}
+
+a,
+button,
+input:focus,
+input[type="button"],
+input[type="reset"],
+input[type="submit"],
+textarea {
+	-webkit-transition: all 0.1s ease-in-out;
+	-moz-transition:    all 0.1s ease-in-out;
+	-ms-transition:     all 0.1s ease-in-out;
+	-o-transition:      all 0.1s ease-in-out;
+	transition:         all 0.1s ease-in-out;
+}
+
+::-moz-selection {
+	background-color: #000;
+	color: #fff;
+}
+
+::selection {
+	background-color: #000;
+	color: #fff;
+}
+
+a {
+	color: #000;
+	text-decoration: underline;
+}
+
+a:hover {
+	text-decoration: none;
+}
+
+p {
+	margin: 0 0 24px;
+	margin: 0 0 2.4rem;
+	padding: 0;
+}
+
+strong {
+	font-weight: 700;
+}
+
+ol,
+ul {
+	margin: 0;
+	padding: 0;
+}
+
+blockquote,
+blockquote::before {
+	color: #999;
+}
+
+blockquote {
+	margin: 40px 40px 24px;
+	margin: 4rem 4rem 2.4rem;
+}
+
+blockquote::before {
+	content: "\201C";
+	display: block;
+	font-size: 30px;
+	font-size: 3rem;
+	height: 0;
+	left: -20px;
+	position: relative;
+	top: -10px;
+}
+
+.entry-content code {
+	background-color: #333;
+	color: #ddd;
+}
+
+cite {
+	font-style: normal;
+}
+
+/* Headings
+--------------------------------------------- */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	color: #000;
+	font-family: 'Roboto', sans-serif;
+	font-weight: 700;
+	line-height: 1.2;
+	margin: 0;
+	margin-bottom: 16px;
+	margin-bottom: 1.6rem;
+	padding: 0;
+}
+
+h1 {
+	font-size: 36px;
+	font-size: 3.6rem;
+}
+
+h2 {
+	font-size: 30px;
+	font-size: 3rem;
+}
+
+h3 {
+	font-size: 24px;
+	font-size: 2.4rem;
+}
+
+h4 {
+	font-size: 20px;
+	font-size: 2rem;
+}
+
+h5 {
+	font-size: 18px;
+	font-size: 1.8rem;
+}
+
+h6 {
+	font-size: 16px;
+	font-size: 1.6rem;
+}
+
+/* Objects
+--------------------------------------------- */
+
+embed,
+iframe,
+img,
+object,
+video,
+.wp-caption {
+	max-width: 100%;
+}
+
+img {
+	height: auto;
+	width: auto; /* IE8 */
+}
+
+.format-gallery #gallery-1 img {
+	border: none;
+}
+
+/* Forms
+--------------------------------------------- */
+
+input,
+select,
+textarea {
+	background-color: #fff;
+	border: 1px solid #ddd;
+	color: #666;
+	font-family: 'Roboto', sans-serif;
+	font-weight: 300;
+	padding: 16px;
+	padding: 1.6rem;
+	width: 100%;
+}
+
+input:focus,
+textarea:focus {
+	outline: none;
+}
+
+.content input:focus,
+.content textarea:focus {
+	border: 1px solid #999;
+}
+
+::-moz-placeholder {
+	color: #666;
+}
+
+::-webkit-input-placeholder {
+	color: #666;
+}
+
+button,
+input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+	background-color: #000;
+	border: none;
+	color: #fff;
+	cursor: pointer;
+	font-family: 'Roboto Condensed', sans-serif;
+	font-weight: 300;
+	letter-spacing: 1px;
+	letter-spacing: 0.1rem;
+	padding: 16px 24px;
+	padding: 1.6rem 2.4rem;
+	text-transform: uppercase;
+	width: auto;
+}
+
+button:hover,
+input:hover[type="button"],
+input:hover[type="reset"],
+input:hover[type="submit"] {
+	background-color: #1dbec0;
+}
+
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-results-button {
+	display: none;
+}
+
+/* Tables
+--------------------------------------------- */
+
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+	line-height: 2;
+	margin-bottom: 40px;
+	margin-bottom: 4rem;
+	width: 100%;
+}
+
+tbody {
+	border-bottom: 1px solid #ddd;
+}
+
+th,
+td {
+	text-align: left;
+}
+
+th {
+	font-weight: bold;
+	text-transform: uppercase;
+}
+
+td {
+	border-top: 1px solid #ddd;
+	padding: 6px 0;
+	padding: 0.6rem 0;
+}
+
+
+/*
+Structure and Layout
+---------------------------------------------------------------------------------------------------- */
+
+/* Site Containers
+--------------------------------------------- */
+
+.site-container {
+	max-width: 1280px;
+}
+
+.sixteen-nine-landing .site-container {
+	margin: 40px auto;
+	margin: 4rem auto;
+	max-width: 800px;
+}
+
+.site-inner {
+	float: right;
+	width: 1040px;
+}
+
+.sixteen-nine-landing .site-inner {
+	float: none;
+	max-width: 100%;
+}
+
+/* Column Widths and Positions
+--------------------------------------------- */
+
+/* Wrapping div for .content and .sidebar-primary */
+
+.content-sidebar-wrap {
+	float: left;
+	width: 100%;
+}
+
+/* Content */
+
+.content {
+	background-color: #fff;
+	float: left;
+	padding: 48px 60px 60px;
+	padding: 4.8rem 6rem 6rem;
+	width: 760px;
+}
+
+.full-width-content .content {
+	width: 1000px;
+}
+
+.sixteen-nine-landing .content {
+	width: 100%;
+}
+
+/* Primary Sidebar */
+
+.sidebar-primary {
+	float: right;
+	width: 240px;
+	word-wrap: break-word;
+}
+
+/* Column Classes
+	Link: http://twitter.github.io/bootstrap/assets/css/bootstrap-responsive.css
+--------------------------------------------- */
+
+.five-sixths,
+.four-sixths,
+.one-fourth,
+.one-half,
+.one-sixth,
+.one-third,
+.three-fourths,
+.three-sixths,
+.two-fourths,
+.two-sixths,
+.two-thirds {
+	float: left;
+	margin-left: 2.564102564102564%;
+}
+
+.one-half,
+.three-sixths,
+.two-fourths {
+	width: 48.717948717948715%;
+}
+
+.one-third,
+.two-sixths {
+	width: 31.623931623931625%;
+}
+
+.four-sixths,
+.two-thirds {
+	width: 65.81196581196582%;
+}
+
+.one-fourth {
+	width: 23.076923076923077%;
+}
+
+.three-fourths {
+	width: 74.35897435897436%;
+}
+
+.one-sixth {
+	width: 14.52991452991453%;
+}
+
+.five-sixths {
+	width: 82.90598290598291%;
+}
+
+.first {
+	clear: both;
+	margin-left: 0;
+}
+
+
+/*
+Common Classes
+---------------------------------------------------------------------------------------------------- */
+
+/* WordPress
+--------------------------------------------- */
+
+.avatar {
+	float: left;
+}
+
+.site-header .avatar,
+.site-header .site-avatar img {
+	border-radius: 50%;
+	display: block;
+	float: none;
+	height: 112px;
+	margin: 0 auto 24px;
+	margin: 0 auto 2.4rem;
+	width: 112px;
+}
+
+.author-box .avatar {
+	height: 70px;
+	margin-right: 24px;
+	margin-right: 2.4rem;
+	width: 70px;
+}
+
+.entry-comments .avatar {
+	height: 48px;
+	margin: 0 16px 24px 0;
+	margin: 0 1.6rem 2.4rem 0;
+	width: 48px;
+}
+
+.alignleft .avatar {
+	margin-right: 24px;
+	margin-right: 2.4rem;
+}
+
+.alignright .avatar {
+	margin-left: 24px;
+	margin-left: 2.4rem;
+}
+
+.search-form {
+	width: 100%;
+}
+
+.search-form input[type="submit"] {
+	border: 0;
+	clip: rect(0, 0, 0, 0);
+	height: 1px;
+	margin: -1px;
+	padding: 0;
+	position: absolute;
+	width: 1px;
+}
+
+.sticky {
+}
+
+img.centered,
+.aligncenter {
+	display: block;
+	margin: 0 auto 24px;
+	margin: 0 auto 2.4rem
+}
+
+img.alignnone {
+	margin-bottom: 12px;
+	margin-bottom: 1.2rem;
+}
+
+.alignleft {
+	float: left;
+	text-align: left;
+}
+
+.alignright {
+	float: right;
+	text-align: right;
+}
+
+img.alignleft,
+.wp-caption.alignleft {
+	margin: 0 24px 24px 0;
+	margin: 0 2.4rem 2.4rem 0;
+}
+
+img.alignright,
+.wp-caption.alignright {
+	margin: 0 0 24px 24px;
+	margin: 0 0 2.4rem 2.4rem;
+}
+
+.wp-caption-text {
+	font-size: 14px;
+	font-size: 1.4rem;
+	font-weight: 700;
+	margin: 0;
+	text-align: center;
+}
+
+.gallery-caption {
+}
+
+.widget_calendar table {
+	width: 100%;
+}
+
+.widget_calendar td {
+	text-align: center;
+}
+
+/* Genesis
+--------------------------------------------- */
+
+.archive-description,
+.author-box,
+.breadcrumb {
+	background-color: #f5f5f5;
+	margin: 0 -60px 60px;
+	margin: 0 -6rem 6rem;
+}
+
+.archive-description {
+	padding: 40px 60px 16px;
+	padding: 4rem 6rem 1.6rem;
+}
+
+.author-box,
+.breadcrumb {
+	padding: 40px 60px;
+	padding: 4rem 6rem;
+}
+
+.archive .archive-description,
+.author .author-box,
+.breadcrumb {
+	margin-top: -48px;
+	margin-top: -4.8rem;
+}
+
+.author-box p {
+	margin-bottom: 0;
+}
+
+.author-box-title {
+	color: #000;
+	font-size: 16px;
+	font-size: 1.6rem;
+	margin-bottom: 4px;
+	margin-bottom: 0.4rem;
+}
+
+/* Headings
+--------------------------------------------- */
+
+.entry-title,
+.widgettitle {
+	font-family: 'Roboto Slab', serif;
+	font-weight: 300;
+}
+
+.entry-title {
+	font-size: 60px;
+	font-size: 6rem;
+	font-weight: 300;
+	line-height: 1.2;
+	text-align: center;
+}
+
+.entry-title a {
+	text-decoration: none;
+}
+
+.entry-title a:hover {
+	color: #1dbec0;
+}
+
+.widgettitle {
+	color: #cdf593;
+	font-size: 16px;
+	font-size: 1.6rem;
+	letter-spacing: 1px;
+	letter-spacing: 0.1rem;
+	text-transform: uppercase;
+}
+
+.site-header .widgettitle {
+	color: #fff;
+}
+
+.archive-title {
+	background-color: #f5f5f5;
+	font-size: 20px;
+	font-size: 2rem;
+}
+
+.search .archive-title {
+	background-color: #f5f5f5;
+	font-size: 20px;
+	font-size: 2rem;
+	margin: -48px -60px 40px;
+	margin: -4.8em -6rem 4rem;
+	padding: 20px 60px;
+	padding: 2rem 6rem;
+}
+
+
+/*
+Widgets
+---------------------------------------------------------------------------------------------------- */
+
+/* Featured Content
+--------------------------------------------- */
+
+.featured-content .entry {
+	margin-bottom: 12px;
+	margin-bottom: 1.2rem;
+	padding: 0;
+}
+
+.featured-content .entry-header .entry-meta,
+.featured-content .entry-title {
+	text-align: left;
+}
+
+.featured-content .entry-title {
+	font-size: 24px;
+	font-size: 2.4rem;
+}
+
+.featured-content .entry-header .entry-meta {
+	margin-bottom: 20px;
+	margin-bottom: 2rem;
+}
+
+.featured-content .entry-header .entry-meta,
+.featured-content .entry-header .entry-meta a:hover {
+	color: #fff;
+}
+
+
+/*
+Plugins
+---------------------------------------------------------------------------------------------------- */
+
+/* Genesis eNews Extended
+--------------------------------------------- */
+
+.enews-widget {
+	color: #fff;
+}
+
+.enews-widget input {
+	border: none;
+	margin-right: -4px;
+	margin-right: -0.4rem;
+	padding: 16px 24px 15px;
+	padding: 1.6rem 2.4rem 1.5rem;
+	width: 60%;
+}
+
+.content .enews-widget input:focus {
+	border: none;
+}
+
+.enews-widget input[type="submit"] {
+	background-color: #1dbec0;
+	color: #fff;
+	margin: 0;
+	padding: 16px 24px 15px;
+	padding: 1.6rem 2.4rem 1.5rem;
+	width: auto;
+}
+
+.enews-widget input:hover[type="submit"] {
+	background-color: #19a5a7;
+}
+
+/* Genesis Latest Tweets
+--------------------------------------------- */
+
+.latest-tweets ul li {
+	margin-bottom: 16px;
+	margin-bottom: 1.6rem;
+}
+
+/* Jetpack
+--------------------------------------------- */
+
+img#wpstats {
+	display: none;
+}
+
+/* Gravity Forms
+--------------------------------------------- */
+
+div.gform_wrapper input[type="text"],
+div.gform_wrapper textarea,
+div.gform_wrapper .ginput_complex label {
+	font-size: 16px;
+	font-size: 1.6rem;
+	padding: 16px;
+	padding: 1.6rem;
+}
+
+div.gform_wrapper .ginput_complex label {
+	padding: 0;
+}
+
+div.gform_wrapper li,
+div.gform_wrapper form li {
+	margin: 16px 0 0;
+	margin: 1.6rem 0 0;
+}
+
+
+/*
+Site Header
+---------------------------------------------------------------------------------------------------- */
+
+.site-header {
+	background-color: #000;
+	color: #999;
+	float: left;
+	height: 100%;
+	padding-top: 40px;
+	padding-top: 4rem;
+	position: fixed;
+	text-align: center;
+	width: 240px;
+}
+
+.site-header a,
+.site-header a:hover {
+	color: #fff;
+	text-decoration: none;
+}
+
+.header-image .site-header {
+	padding: 0;
+}
+
+/* Title Area
+--------------------------------------------- */
+
+.site-title {
+	font-family: 'Roboto Condensed', sans-serif;
+	font-size: 24px;
+	font-size: 2.4rem;
+	font-weight: 400;
+	letter-spacing: 1px;
+	letter-spacing: 0.1rem;
+	line-height: 1;
+	margin-bottom: 10px;
+	margin-bottom: 1rem;
+	text-transform: uppercase;
+}
+
+.site-title a,
+.site-title a:hover {
+	color: #fff;
+	text-decoration: none;
+}
+
+.site-description {
+	color: #999;
+	font-family: 'Playfair Display', serif;
+	font-size: 14px;
+	font-size: 1.4rem;
+	font-style: italic;
+	font-weight: 300;
+	margin-bottom: 40px;
+	margin-bottom: 4rem;
+}
+
+/* Widget Area
+--------------------------------------------- */
+
+.header-widget-area .widget {
+	margin-bottom: 40px;
+	margin-bottom: 4rem;
+ 	padding: 0 20px;
+ 	padding: 0 2rem;
+}
+
+.header-widget-area .widget_nav_menu {
+ 	padding: 0;
+}
+
+.site-header .simple-social-icons ul li {
+	margin-bottom: 0 !important;
+}
+
+
+/*
+Site Navigation
+---------------------------------------------------------------------------------------------------- */
+
+.genesis-nav-menu {
+	border-top: 1px solid #333;
+	clear: both;
+	font-family: 'Roboto Condensed', sans-serif;
+	font-size: 16px;
+	font-size: 1.6rem;
+	font-weight: 300;
+	letter-spacing: 1px;
+	letter-spacing: 0.1rem;
+	overflow: hidden;
+	padding: 0;
+	width: 100%;
+}
+
+.genesis-nav-menu li {
+	border-bottom: 1px solid #333;
+	float: left;
+	list-style-type: none;
+	width: 100%;
+}
+
+.genesis-nav-menu a {
+	background-color: none;
+	color: #fff;
+	display: block;
+	padding: 12px;
+	padding: 1.2rem;
+	text-align: center;
+	text-transform: uppercase;
+}
+
+.genesis-nav-menu a:hover,
+.genesis-nav-menu .current-menu-item > a {
+	background-color: #fff;
+	color: #000;
+}
+
+.genesis-nav-menu .sub-menu {
+	left: -9999px;
+	margin: -50px 0 0 240px;
+	opacity: 0;
+	position: absolute;
+	-webkit-transition: opacity .4s ease-in-out;
+	-moz-transition:    opacity .4s ease-in-out;
+	-ms-transition:     opacity .4s ease-in-out;
+	-o-transition:      opacity .4s ease-in-out;
+	transition:         opacity .4s ease-in-out;
+	width: 160px;
+	z-index: 99;
+}
+
+.genesis-nav-menu .sub-menu a {
+	background-color: #000;
+	border-left: 1px solid #333;
+	border-right: 1px solid #333;
+	color: #999;
+	letter-spacing: 0;
+	position: relative;
+	width: 160px;
+}
+
+.genesis-nav-menu .sub-menu a:hover {
+	color: #fff;
+}
+
+.genesis-nav-menu .sub-menu .sub-menu {
+	margin: -50px 0 0 159px;
+}
+
+.genesis-nav-menu .menu-item:hover {
+	position: static;
+}
+
+.genesis-nav-menu .menu-item:hover > .sub-menu {
+	left: auto;
+	opacity: 1;
+}
+
+/* Responsive Menu
+--------------------------------------------- */
+
+#responsive-menu-icon {
+	cursor: pointer;
+	display: none;
+}
+
+#responsive-menu-icon::before {
+	color: #fff;
+	content: '\2630';
+	font-size: 20px;
+	font-size: 2rem;
+	margin: 0 auto;
+}
+
+
+/*
+Content Area
+---------------------------------------------------------------------------------------------------- */
+
+/* Entries
+--------------------------------------------- */
+
+.entry {
+	border-bottom: 3px solid #f5f5f5;
+	margin-bottom: 40px;
+	margin-bottom: 4rem;
+}
+
+.error404 .entry,
+.page .entry,
+.single .entry {
+	border: none;
+}
+
+.error404 .entry,
+.page .entry {
+	margin: 0;
+}
+
+.entry-content ol,
+.entry-content p,
+.entry-content ul {
+	margin-bottom: 26px;
+	margin-bottom: 2.6rem;
+}
+
+.entry-content ol,
+.entry-content ul {
+	margin-left: 40px;
+	margin-left: 4rem;
+}
+
+.entry-content ol li {
+	list-style-type: decimal;
+}
+
+.entry-content ul li {
+	list-style-type: disc;
+}
+
+.entry-content ol ol,
+.entry-content ul ul,
+.entry-content .wp-caption p {
+	margin-bottom: 0;
+}
+
+.entry-meta {
+	clear: both;
+	color: #666;
+	font-family: 'Roboto Condensed', sans-serif;
+	font-size: 14px;
+	font-size: 1.4rem;
+	letter-spacing: 1px;
+	letter-spacing: 0.1rem;
+	text-transform: uppercase;
+	margin-bottom: 40px;
+	margin-bottom: 4rem;
+}
+
+.entry-header .entry-meta {
+	text-align: center;
+}
+
+.single .entry-footer .entry-meta {
+	margin-bottom: 0;
+}
+
+.entry-meta a {
+	color: #666;
+	text-decoration: none;
+}
+
+.entry-meta a:hover {
+	color: #000;
+}
+
+.entry-comments-link::before {
+	content: "\2014";
+	margin: 0 6px 0 2px;
+	margin: 0 0.6rem 0 0.2rem;
+}
+
+.entry-categories,
+.entry-tags {
+	display: block;
+}
+
+/* After Entry
+--------------------------------------------- */
+
+.after-entry {
+	background-color: #000;
+	color: #fff;
+	margin-bottom: 60px;
+	margin-bottom: 6rem;
+	padding: 40px 60px 10px;
+	padding: 4rem 6rem 1rem;
+	text-align: center;
+}
+
+.after-entry .widgettitle {
+	font-size: 20px;
+	font-size: 2rem;
+}
+
+.after-entry .widget {
+	margin-bottom: 30px;
+	margin-bottom: 3rem;
+}
+
+.after-entry li {
+	list-style-type: none;
+}
+
+.after-entry li a {
+	color: #999;
+}
+
+/* Pagination
+--------------------------------------------- */
+
+.archive-pagination,
+.entry-pagination {
+	clear: both;
+}
+
+.archive-pagination li {
+	display: inline;
+}
+
+.archive-pagination li a {
+	background-color: #000;
+	color: #fff;
+	cursor: pointer;
+	display: inline-block;
+	font-family: 'Roboto Condensed', sans-serif;
+	font-weight: 300;
+	padding: 8px 12px;
+	padding: 0.8rem 1.2rem;
+	text-decoration: none;
+}
+
+.archive-pagination li a:hover,
+.archive-pagination li.active a {
+	background-color: #1dbec0;
+}
+
+/* Comments
+--------------------------------------------- */
+
+.entry-comments,
+.ping-list {
+	margin-bottom: 60px;
+	margin-bottom: 6rem;
+}
+
+.entry-comments .comment-author {
+	margin-bottom: 0;
+}
+
+.comment-respond input[type="email"],
+.comment-respond input[type="text"],
+.comment-respond input[type="url"] {
+	width: 50%
+}
+
+.comment-respond label {
+	display: block;
+	margin-right: 12px;
+	margin-right: 1.2rem;
+}
+
+.comment-list li,
+.ping-list li {
+	list-style-type: none;
+	margin-top: 24px;
+	margin-top: 2.4rem;
+	padding: 32px;
+	padding: 3.2rem;
+}
+
+.comment-list li li {
+	margin-right: -32px;
+	margin-right: -3.2rem;
+}
+
+li.comment {
+	background-color: #f5f5f5;
+	border: 2px solid #fff; 
+	border-right: none; 
+}
+
+.bypostauthor {
+}
+
+.form-allowed-tags {
+	background-color: #f5f5f5;
+	font-size: 14px;
+	font-size: 1.4rem;
+	padding: 24px;
+	padding: 2.4rem;
+}
+
+
+/*
+Sidebars
+---------------------------------------------------------------------------------------------------- */
+
+.sidebar {
+	color: #fff;
+	display: inline;
+	padding-top: 60px;
+	padding-top: 6rem;
+}
+
+.sidebar a {
+	color: #fff;
+	text-decoration: underline;
+}
+
+.sidebar a:hover {
+	text-decoration: none;
+}
+
+.sidebar li {
+	list-style-type: none;
+	margin-bottom: 6px;
+	margin-bottom: 0.6rem;
+	word-wrap: break-word;
+}
+
+.sidebar .widget {
+	margin-bottom: 40px;
+	margin-bottom: 4rem;
+}
+
+
+/*
+Site Footer
+---------------------------------------------------------------------------------------------------- */
+
+.site-footer {
+	border-top: 1px solid #333;
+	clear: both;
+	font-family: 'Roboto Condensed', sans-serif;
+	font-size: 14px;
+	font-size: 1.4rem;
+	letter-spacing: 1px;
+	letter-spacing: 0.1rem;
+	padding: 20px 16px;
+	padding: 2rem 1.6rem;
+	text-transform: uppercase;
+}
+
+.site-footer,
+.site-footer a {
+	color: #999;
+}
+
+.site-footer a:hover {
+	color: #fff;
+}
+
+.site-footer p {
+	margin-bottom: 0;
+}
+
+
+/*
+Media Queries
+---------------------------------------------------------------------------------------------------- */
+
+@media only screen and (max-width: 1279px) {
+
+	.full-width-content .content,
+	.site-header,
+	.site-inner {
+		width: 100%;
+	}
+
+	.content {
+		width: 70%;
+	}
+
+	.sidebar-primary {
+		width: 30%;
+	}
+
+	.site-header {
+		float: none;
+		height: auto;
+		padding-top: 20px;
+		padding-top: 2rem;
+		position: relative;
+	}
+
+	.title-area {
+		margin-bottom: 20px;
+		margin-bottom: 2rem;
+	}
+
+	.genesis-nav-menu {
+		border-bottom: 1px solid #333;
+		margin: 0 0 20px;
+		margin: 0 0 2rem;
+		text-align: center;
+	}
+
+	.genesis-nav-menu .menu-item {
+		display: inline-block;
+		text-align: left;
+	}
+
+	.genesis-nav-menu li {
+		border: none;
+		float: none;
+		width: auto;
+	}
+
+	.genesis-nav-menu .sub-menu {
+		margin: 0;
+	}
+
+	.genesis-nav-menu .sub-menu a {
+		text-align: left;
+	}
+
+	.simple-social-icons,
+	.site-footer {
+		display: none;
+	}
+
+	.sidebar {
+		padding: 60px 60px 0;
+		padding: 6rem 6rem 0;
+	}
+
+}
+
+@media only screen and (max-width: 1023px) {
+
+	.content,
+	.sidebar-primary {
+		width: 100%;
+	}
+
+	.archive-description,
+	.author-box,
+	.breadcrumb {
+		margin: 0 0 60px;
+		margin: 0 0 6rem;
+	}
+
+	.sixteen-nine-landing .site-container {
+		margin: 5%;
+	}
+
+	.search-form {
+		margin: 0 auto;
+		width: 50%;
+	}
+
+}
+
+
+@media only screen and (max-width: 767px) {
+
+	.site-title {
+		font-size: 24px;
+		font-size: 2.4rem;
+	}
+
+	.title-area {
+		margin-bottom: 0;
+	}
+
+	.header-widget-area .widget,
+	.site-description {
+		margin-bottom: 20px;
+		margin-bottom: 2rem;
+	}
+
+	.site-header .widget-area {
+		text-align: center;
+	}
+
+	.content,
+	.sidebar {
+		padding-left: 10%;
+		padding-right: 10%;
+	}
+
+	.entry-title {
+		font-size: 32px;
+		font-size: 3.2rem;
+	}
+
+	.enews-widget input,
+	.enews-widget input[type="submit"],
+	.five-sixths,
+	.four-sixths,
+	.one-fourth,
+	.one-half,
+	.one-sixth,
+	.one-third,
+	.search-form,
+	.three-fourths,
+	.three-sixths,
+	.two-fourths,
+	.two-sixths,
+	.two-thirds {
+		margin: 0;
+		width: 100%;
+	}
+
+	.responsive-menu {
+		display: none;
+	}
+
+	#responsive-menu-icon {
+		display: block;
+	}
+
+}

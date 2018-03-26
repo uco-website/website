@@ -1,0 +1,33 @@
+Ubuntu-LoCo port for WordPress.
+===============================
+
+Website:
+  http://launchpad.net/ubuntu-community-webthemes
+Launchpad:
+  https://code.launchpad.net/~ubuntu-community-webthemes/ubuntu-community-webthemes/light-wordpress-theme
+Bzr:
+  bzr branch lp:ubuntu-community-webthemes/light-wordpress-theme
+
+This is a theme created for WordPress to be used
+as the CMS engine for Ubuntu loco websites.
+
+It uses the layout of the current (ubuntu-11.04) ubuntu 
+website revised by lp:ubuntu-community-webthemes team and contributors.
+
+Theme uses Thematic Framework for WordPress. This is a child theme for
+it, so It won't work without thematic installed!!!
+
+== Credits ==
+Some pals deserve kudos for tools I used here:
+ * Ian Stewart for awesome Thematic (http://themeshaper.com/thematic/) under GPL.
+ * Ubuntu Design Team for initial mockups and ideas: http://design.canonical.com/
+ * (Agafonov) and lp:~ubuntu-ru Team for initial html work
+ * Matteo Lissandrini for html port
+ * lp:wordpress-loco for initial work
+ * lp:~chrisjohnston for support and updates
+
+Currently using WordPress version at least >=2.9, though I recommend >=3.0!
+Happy loco building!
+
+---
+Stas Sușcov <stas@ubuntu.ro>
