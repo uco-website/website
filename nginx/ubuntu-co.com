@@ -13,8 +13,8 @@ server {
     root    /var/www/ubuntu-co.com ;
     error_page 502 503 504 /50x.html;
 
-        include /etc/nginx/conf.d/vhost.inc;
 
+        include /etc/nginx/conf.d/vhost.inc;
 
     if ($request_uri ~ ^/wp-content/uploads/.*\.php$) {return 403;}
     if ($request_uri ~ ^/wp-content/w3tc/objectcache ) { return 403;}
@@ -37,6 +37,8 @@ server {
 
         location ~ \.(jpg|gif|png|ico|jpeg)$ {
         expires 7d;
+        }
+
 
 include /etc/nginx/conf.d/w3tc/w3tc_page_cache.inc;
 include /etc/nginx/conf.d/w3tc/w3tc_browser.inc;
