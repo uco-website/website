@@ -15,6 +15,7 @@ server {
 
 
         include /etc/nginx/conf.d/vhost.inc;
+        if ($scheme = http) { rewrite ^/(.*) https://$host/$1 permanent; }
 
     if ($request_uri ~ ^/wp-content/uploads/.*\.php$) {return 403;}
     if ($request_uri ~ ^/wp-content/w3tc/objectcache ) { return 403;}
